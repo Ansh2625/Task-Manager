@@ -99,6 +99,7 @@ function displayTasks()
 
         const completeButton = document.createElement('button');
         completeButton.textContent = 'Complete';
+        completeButton.className = 'btn';
         completeButton.addEventListener('click', () => 
         {
             if(taskQueue.peek().element !== task.element)

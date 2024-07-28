@@ -7,6 +7,12 @@ class PriorityQueue
 
     enqueue(element, priority)
     {
+        if(this.items.some(item => item.priority === priority))
+        {
+            alert(`A task with priority ${priority} already exists. Please choose a different priority.`);
+            return;
+        }
+
         const task = {element, priority};
         let added = false;
 

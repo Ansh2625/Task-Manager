@@ -101,6 +101,10 @@ function displayTasks()
         completeButton.textContent = 'Complete';
         completeButton.addEventListener('click', () => 
         {
+            if(taskQueue.peek().element !== task.element)
+            {
+                alert('Please complete the task with the highest priority first.');
+            }
             taskQueue.remove(task.element);
             displayTasks();
         });

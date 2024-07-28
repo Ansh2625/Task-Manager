@@ -64,3 +64,42 @@ class PriorityQueue
     }
 
 }
+
+const taskQueue = new PriorityQueue();
+const taskForm = document.getElementById('task');
+const taskList = document.getElementById('list');
+
+taskForm.addEventListener('submit',(e) => 
+{
+    e.preventDefault();
+
+    const taskName = document.getElementById('taskName').value;
+    const taskPriority = parseInt(document.getElementById('priority').value);
+
+    taskQueue.enqueue(taskName, taskPriority);
+    displayTasks();
+
+    taskForm.reset();
+});
+
+function displayTasks()
+{
+    taskList.innerHTML = '';
+
+    taskQueue.items.forEach((task, index) => 
+    {
+        const taskItem = document.createElement('li');
+        taskItem.textContent = `${task.element} - Priority: ${task.priority}`;
+
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.addEventListener('click', () => 
+        {
+            taskQueue.remove(task.element);
+            displayTasks();
+        });
+
+        taskItem.appendChild(completeButton);
+        taskList.appendChild(taskItem);
+    });
+}

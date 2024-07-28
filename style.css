@@ -24,3 +24,42 @@ form
     display: flex;
     justify-content: space-between;
 }
+
+input[type="text"], input[type="number"]
+{
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button
+{
+    padding: 10px 20px;
+    font-weight: bolder;
+    background-color: black;
+    color: orange;
+    cursor: pointer;
+}
+
+button:hover
+{
+    background-color: orange;
+    color: black;
+}
+
+ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+li
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 16px;
+    background-color: rgb(243, 243, 243);
+}
